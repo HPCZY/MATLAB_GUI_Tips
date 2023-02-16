@@ -1,0 +1,23 @@
+function Hobj = GUI2(mainFig)
+
+Hobj.Fig = figure('Name','Ñ¡ÔñÑÕÉ«','Position',[700,400,300,100],...
+    'color',[.9,.9,.9],'menu','none','NumberTitle','off');
+
+Hobj.btR = uicontrol(Hobj.Fig,'style','pushbutton','String',[],...
+    'Units','normalized','Position',[0,0,1/3,1],...
+    'BackgroundColor',[1,0,0],'Callback',@doit);
+Hobj.btG = uicontrol(Hobj.Fig,'style','pushbutton','String',[],...
+    'Units','normalized','Position',[1/3,0,1/3,1],...
+    'BackgroundColor',[0,1,0],'Callback',@doit);
+Hobj.btB = uicontrol(Hobj.Fig,'style','pushbutton','String',[],...
+    'Units','normalized','Position',[2/3,0,1/3,1],...
+    'BackgroundColor',[0,0,1],'Callback',@doit);
+
+    function doit(src,event)
+        mainFig.param = 10;
+        color = get(src,'BackgroundColor');
+        set(mainFig.bt,'BackgroundColor',color)
+    end
+
+end
+
